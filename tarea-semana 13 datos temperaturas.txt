@@ -1,0 +1,19 @@
+def calcular_temperatura_promedio(datos_temperaturas):
+    temperaturas_promedio = {}
+    for ciudad, temperaturas_semana in datos_temperaturas.items():
+        total_temperaturas = sum(temperaturas_semana)
+        promedio_temperaturas = total_temperaturas / len(temperaturas_semana)
+        temperaturas_promedio[ciudad] = promedio_temperaturas
+    return temperaturas_promedio
+
+# Datos de temperaturas por ciudad y semana
+datos_temperaturas = {
+    'Loja': [23, 22, 20, 21],
+    'Macará': [19, 18, 21, 22],
+    'Catamayo': [16, 15, 15, 16]
+}
+
+temperaturas_promedio = calcular_temperatura_promedio(datos_temperaturas)
+
+for ciudad, temperatura_promedio in temperaturas_promedio.items():
+    print(f"La temperatura promedio en {ciudad} es: {temperatura_promedio}°C")
