@@ -1,0 +1,20 @@
+# Escritura de Archivo de Texto
+# Crea un nuevo archivo llamado my_notes.txt
+with open("my_notes.txt", "w") as file:
+    # Escribe al menos tres líneas de notas personales en el archivo
+    file.write("Primer nota personal.\n")
+    file.write("Segunda nota personal.\n")
+    file.write("Tercera nota personal.\n")
+
+# Lectura de Archivo de Texto
+# Abre el archivo my_notes.txt
+with open("my_notes.txt", "r") as file:
+    # Lee el contenido del archivo línea por línea utilizando readline()
+    line = file.readline()
+
+    # Mientras haya líneas en el archivo, muestra cada línea leída en la consola
+    while line:
+        print(line.strip())  # strip() elimina los caracteres de nueva línea al final de cada línea
+        line = file.readline()
+
+# No es necesario cerrar el archivo cuando se utiliza el contexto 'with', se cerrará automáticamente
